@@ -18,7 +18,8 @@
     <h1>Blue Archive Title Call Quiz</h1>
     <button onclick="playSound()">Press to Listen</button>
     <br>
-    <input type="text" id="answer" placeholder="Enter your answer">
+    <input type="search" list="studentList" id="answer" placeholder="Enter your answer">
+    <datalist id="studentList"></datalist>
     <button onclick="checkAnswer()">Submit</button>
     <button id="passButton" onclick="passQuestion()">Pass</button>
     
@@ -152,6 +153,13 @@
             { sound: "q117.wav", answer: "Reijo", image: "r117.png" }
         ];
         
+        let studentString = "";
+        for (student of allQuestions) {
+            studentString += "<option value=" + student.answer + " />";
+        }
+
+        document.getElementById("studentList").innerHTML = studentString;
+
         let questions = allQuestions.slice().sort(() => Math.random() - 0.5).slice(0, 10);
         let currentQuestion = 0;
         let score = 0;
