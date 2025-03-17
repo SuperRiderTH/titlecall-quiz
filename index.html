@@ -160,10 +160,21 @@
 
         document.getElementById("studentList").innerHTML = studentString;
 
-        let questions = allQuestions.slice().sort(() => Math.random() - 0.5).slice(0, 10);
+        let questionAmount = 10;
         let currentQuestion = 0;
         let score = 0;
-        
+
+        // Randomize students.
+        for ( var i = allQuestions.length - 1; i >= 0; i-- ) {
+            var j = Math.floor( Math.random() * ( i + 1 ) );
+            var temp = allQuestions[i];
+            allQuestions[i] = allQuestions[j];
+            allQuestions[j] = temp;
+        }
+
+        // Grab the amount that we want.
+        let questions = allQuestions.slice(0, questionAmount);
+
         function playSound() {
             document.getElementById("quizSound").src = questions[currentQuestion].sound;
             document.getElementById("quizSound").play();
