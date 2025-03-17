@@ -181,11 +181,11 @@
         }
         
         function checkAnswer() {
-            let userAnswer = document.getElementById("answer").value.trim();
+            let userAnswer = document.getElementById("answer").value.trim().toLowerCase();
             let resultElement = document.getElementById("result");
             let resultImage = document.getElementById("resultImage");
             
-            if (userAnswer === questions[currentQuestion].answer) {
+            if (userAnswer === questions[currentQuestion].answer.toLowerCase()) {
                 resultElement.innerText = "Correct!";
                 score++;
             } else {
