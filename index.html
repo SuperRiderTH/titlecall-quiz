@@ -152,6 +152,8 @@
             { sound: "q116.wav", answer: "Reisa", image: "r116.png" },
             { sound: "q117.wav", answer: "Reijo", image: "r117.png" }
         ];
+
+        allQuestions.sort((a, b) => a.answer.localeCompare(b.answer))
         
         let studentString = "";
         for (student of allQuestions) {
