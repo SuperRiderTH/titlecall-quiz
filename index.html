@@ -150,14 +150,23 @@
             { sound: "q114.wav", answer: "Meru", image: "r114.png" },
             { sound: "q115.wav", answer: "Rumi", image: "r115.png" },
             { sound: "q116.wav", answer: "Reisa", image: "r116.png" },
-            { sound: "q117.wav", answer: "Reijo", image: "r117.png" }
+            { sound: "q117.wav", answer: "Reijo", image: "r117.png" },
+            { sound: "q118.wav", answer: "Misaka Mikoto", image: "r118.png" },
+            { sound: "q119.wav", answer: "Shokuhou Misaki", image: "r119.png" },
+            { sound: "q120.wav", answer: "Saten Ruiko", image: "r120.png" },
+            { sound: "q121.wav", answer: "Aoba", image: "r121.png" },
+            { sound: "q122.wav", answer: "Nozomi", image: "r122.png" },
+            { sound: "q123.wav", answer: "Hikari", image: "r123.png" },
+            { sound: "q124.wav", answer: "Rei", image: "r124.png" },
+            { sound: "q125.wav", answer: "Shiroko Terror", image: "r125.png" },
+            { sound: "q126.wav", answer: "Hatsune Miku", image: "r126.png" }
         ];
 
         allQuestions.sort((a, b) => a.answer.localeCompare(b.answer))
         
         let studentString = "";
         for (student of allQuestions) {
-            studentString += "<option value=" + student.answer + " />";
+            studentString += "<option value=\"" + student.answer + "\" />";
         }
 
         document.getElementById("studentList").innerHTML = studentString;
